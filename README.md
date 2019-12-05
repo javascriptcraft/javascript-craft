@@ -23,11 +23,29 @@ Each component will have different options listed below it.
 
 - Component Creator account/ top contributors ??? (TBD)
 
-## Version 2.
+## Setting up your fork
 
-In v2, we will allow users to create their own components and keep them either private or public. And they can decide to publish thier component by submitting their code to our featured components. And they will be published after reviewing.
+#### To get this project up and running on your computer perform the following:
 
-  
+```Bash
+# Fork the repository by clicking "fork" in the upper right of the reposity page on github
+# Create a local clone of the forked repository
+git clone https://github.com/YOUR_USERNAME/javascript-craft.git
+# Cd into the project directory
+cd javascript-craft
+# Configure Git to sync your fork with the original repository
+git remote add upstream https://github.com/javascriptcraft/javascript-craft.git
+# Install  your dependencies
+yarn install
+# Or
+npm install
+```
+
+#### Submiting PR's
+
+```Bash
+# TODO
+```
 
 ##### FAQ:
 Q:  Is this similar to `Bootstrap`?
