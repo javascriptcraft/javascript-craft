@@ -23,37 +23,28 @@ Each component will have different options listed below it.
 
 - Component Creator account/ top contributors ??? (TBD)
 
-## Version 2.
 
-In v2, we will allow users to create their own components and keep them either private or public. And they can decide to publish thier component by submitting their code to our featured components. And they will be published after reviewing.
+Front End will be built in `ReactJS` with Typescript. But since each component will have examples in `Vanilla JavaScript`, `ReactJS`, `VueJS`  and `AngularJS`, you can still contribute and learn no matter what stack will be.  
+Backend technologies are expected to be `NodeJs`, `ExpressJS`, `MangoDB` and `GraphQL`
 
-  
+## Setting up project
+> We use yarn as our package manager
 
-##### FAQ:
-Q:  Is this similar to `Bootstrap`?
+## 1. Clone project
+```
+git clone https://github.com/javascriptcraft/javascript-craft.git
+```
 
-A:  No, all of these components will be independent component and you don’t need to download the CSS framework to use them.
-
-You can view its code, play with it in editor and discuss about it if you have questions about it. You can copy the code and use it in your projects and modify it to your needs. You can also raise pull request if it has a bug or if you make improvements to it.
-
-  
-
-Q: What stack will be used?
-
-A: Website will be built in `ReactJS` with Typescript. But since each component will have examples in `Vanilla JavaScript`, `ReactJS`, `VueJS`  and `AngularJS`, you can still contribute and learn no matter what stack will be.  Backend technologies are expected to be `NodeJs`, `ExpressJS`, `MangoDB` and `GraphQL` (TBB)
+## 2. Install yarn
+- Read the [Installation Guide](https://yarnpkg.com/en/docs/install) on website for detailed instructions on how to install Yarn.
 
   
 
-## Available Scripts
-
-  
-
+## 3. Run the app in development mode 
 In the project directory, you can run:
-
-  
-
-### `yarn start`
-
+```
+yarn start
+```
   
 
 Runs the app in the development mode.<br  />
@@ -86,7 +77,6 @@ Builds the app for production to the `build` folder.<br  />
 
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-  
 
 The build is minified and the filenames include the hashes.<br  />
 
@@ -96,34 +86,52 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-  
-
-### `yarn eject`
-
-  
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-  
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-  
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-  
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-  
 
 ## Learn More
-
-  
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
   
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Folder Structure Conventions
+============================
+
+
+### A typical top-level directory layout
+
+    .
+    ├── src                     # The main source   
+    │   ├── assets              # Static files such as images
+    │   ├── components          # Reusable components
+    │   ├── constants           # All constant values used in Project
+    │   ├── hooks               # Reusable custom hooks
+    │   ├── routes              # Containers which includes all Business Logic like data fetching
+    │   ├── utils               # Includes helper functions for reusable methods
+    │   ├── App.js              # Top level component
+    │   ├── index.js            # Entry point
+    └── README.md
+
+### Routes for Business Logic
+
+Routes are Each Pages to be shown to users separately.
+
+    .
+    ├── routes                        
+    │   ├── Home              
+    │   │   ├── hooks               # Custom hooks that only be used locally
+    │   │   ├── components          # Simple components which only receives props and renders views using data
+    │   │   ├── HomeContainer.js    # Containers include all data fetching
+    │   │   ├── index.js            # to export component and import in other React components
+    │   ├── About          
+    │   ├── ...          
+    │   └── index.js
+    │__ ...
+
+
+Often it is beneficial to include all related files like `actions` and `components` in each Route container itself, so that if project becomes large, it will be easy to keep all files clean and neat
+
+> **_NOTE:_**
+Reusable `hooks` and `components` are kept in `src/hooks` and `sr/components` respectively to reduce repetition (DRY)
